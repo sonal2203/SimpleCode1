@@ -1,0 +1,39 @@
+package virujavaapplication;
+
+public class ProductOfSums {
+
+    public static int productOfSums(int[] arr, int n) {
+        if (n < 3 || arr == null) {
+            return -1;
+        }
+
+        // Find the sum of the first part of the array.
+        int sumOfFirstPart = 0;
+        for (int i = 0; i < n / 2; i++) {
+            sumOfFirstPart += arr[i];
+        }
+
+        // Find the sum of the second part of the array.
+        int sumOfSecondPart = 0;
+        for (int i = n / 2; i < n; i++) {
+            sumOfSecondPart += arr[i];
+        }
+
+        // Return the sum of the product of the sum of first and second part.
+        return sumOfFirstPart * sumOfSecondPart;
+    }
+
+    public static void main(String[] args) {
+        // Create an array.
+        int[] arr = {3, 5, 14, 12, 10, 74};
+
+        // Get the length of the array.
+        int n = arr.length;
+
+        // Find the sum of the product of the sum of first and second part of the array.
+        int productOfSums = productOfSums(arr, n);
+
+        // Print the result.
+        System.out.println("The product of sums is: " + productOfSums);
+    }
+}
